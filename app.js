@@ -13,7 +13,7 @@ const server = http.listen(PORT,()=>{
 })
 app.use(
     cors({
-        origin: "https://keepdemo.herokuapp.com",
+        origin: true,
         credentials: true,
     })
 );
