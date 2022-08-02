@@ -15,7 +15,6 @@ app.use(
     cors({
         origin: "https://keepdemo.herokuapp.com",
         credentials: true,
-        optionsSuccessStatus: 200
     })
 );
 
