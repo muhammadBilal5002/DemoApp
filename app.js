@@ -6,7 +6,7 @@ require("dotenv").config({path:"./Config/Env.env"})
 const cookieParser = require("cookie-parser");
 const PORT = process.env.PORT || 3000
 
-require("./Config/dbConfig")()
+
 
 const server = http.listen(PORT,()=>{
     console.log("Server Started At PORT "+PORT)
