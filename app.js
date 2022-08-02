@@ -33,7 +33,7 @@ app.use(cookieParser())
 app.use("/api/userAuthentication",require("./Router/userRoute"))
 app.use("/api/task",require("./Router/userTaskRoute"))
 app.use("/api/adminmangment",require("./Router/adminTaskRoute"))
-app.use(require("./Middleware/errorHandler.js"))
+app.use(require("./MiddleWare/errorHandler.js"))
 
 
 //unhandledRejection
