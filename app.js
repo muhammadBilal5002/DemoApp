@@ -13,9 +13,7 @@ const server = http.listen(PORT,()=>{
 })
 app.use(
     cors({
-        origin: function (origin, callback) {
-           callback(null, origin);
-     },
+        origin: true,
       credentials: true,
     })
 );
