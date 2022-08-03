@@ -33,6 +33,7 @@ app.use(cookieParser())
 app.use((req,res,next)=>{
     
     req.mycookie = req.body.cookie
+    next()
 
 })
 app.use("/api/userAuthentication",require("./Router/userRoute"))
