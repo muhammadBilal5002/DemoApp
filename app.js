@@ -31,7 +31,8 @@ process.on("uncaughtException",(e)=>{
 app.use(express.json())
 app.use(cookieParser())
 app.use((req,res,next)=>{
-    console.log(req.cookies['token']);
+    console.log(req.body.cookie);
+    req.mycookie = req.body.cookie
     next()
 })
 app.use("/api/userAuthentication",require("./Router/userRoute"))
