@@ -11,22 +11,15 @@ require("./Config/dbConfig")()
 const server = http.listen(PORT,()=>{
     console.log("Server Started At PORT "+PORT)
 })
-//app.use(
- //   cors({
-       // origin: function (origin, callback) {
-       //     callback(null, origin);
-     //   },
-   //     credentials: true,
-   // })
-//);
-app.use(function(req, res, next) {
-    res.header('Access-Control-Allow-Credentials', true);
-    res.header('Access-Control-Allow-Origin', req.headers.origin);
-    res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE');
-    res.header('Access-Control-Allow-Headers', 'X-Requested-With, X-HTTP-Method-Override, Content-Type, Accept');
-    res.setHeader('Access-Control-Allow-Headers', 'Set-Cookie')
-    next();
-});
+app.use(
+    cors({
+        origin: function (origin, callback) {
+           callback(null, origin);
+     },
+      credentials: true,
+    })
+);
+
 //uncaughtException
 process.on("uncaughtException",(e)=>{
     console.log(`Error in Server ${e.message}`)
