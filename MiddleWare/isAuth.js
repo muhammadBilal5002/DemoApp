@@ -4,7 +4,7 @@ const UserModel = require("../Model/userModel")
 const ErrorHandler = require("../Utilities/errorHandler")
 
 module.exports.IsAuth = AsyncErrorHandler( async (req,res,next)=>{
-    const {token} = req.cookies
+    const token =req.mycookie
     console.log("Token: "+token)
     if(!token){
         return  res.status(400).json({status:false,message:"Please Login To Access Resource"})
