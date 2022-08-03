@@ -30,6 +30,10 @@ process.on("uncaughtException",(e)=>{
 
 app.use(express.json())
 app.use(cookieParser())
+app.use((req,res,next)=>{
+    console.log(req.cookies['token']);
+    next()
+})
 app.use("/api/userAuthentication",require("./Router/userRoute"))
 app.use("/api/task",require("./Router/userTaskRoute"))
 app.use("/api/adminmangment",require("./Router/adminTaskRoute"))
